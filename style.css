@@ -190,3 +190,6 @@ p.attachment img{display:block;margin:0 auto;clear:both}
 
 .screen-reader-text{clip:rect(1px, 1px, 1px, 1px);position:absolute !important}
 .home #breadcrumbs, #comment-notes, .form-allowed-tags, .twtr-ft{display:none}
+#searchsubmit{
+  margin-right: 6em;
+}
