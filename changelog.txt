@@ -1,0 +1,5 @@
+Mobile-First Free Changelog
+
+****************************
+Version 1.0 (10-05-16)
+- Fixed display issue of search text.
