@@ -43,7 +43,7 @@ add_action( 'admin_menu', 'mobilefirst_options_add_page' );
 function mobilefirst_options_add_page()
 {
 global $mobilefirst_theme_page;
-$mobilefirst_theme_page = add_theme_page( __( 'Mobile First Options', 'mobilefirst' ), __( 'Mobile First Options', 'mobilefirst' ), 'edit_theme_options', 'theme_options', 'mobilefirst_options_do_page' );
+$mobilefirst_theme_page = add_theme_page( __( 'Mobile First Options', 'mobilefirst' ), __( 'Mobile First Options', 'mobile-first' ), 'edit_theme_options', 'theme_options', 'mobilefirst_options_do_page' );
 add_action( 'admin_print_scripts-' . $mobilefirst_theme_page, 'mobilefirst_enqueue_admin_scripts' );
 }
 function mobilefirst_options_do_page()
@@ -56,56 +56,56 @@ $_REQUEST['settings-updated'] = false;
 <div class="wrap">
 <?php global $mobilefirst_theme_page; ?>
 <?php $current_theme = wp_get_theme(); ?>
-<?php screen_icon(); echo "<h2>" . sprintf( __( 'Mobile First Options', 'mobilefirst' ) ) . "</h2>"; ?>
+<?php echo "<h2>" . sprintf( __( 'Mobile First Options', 'mobile-first' ) ) . "</h2>"; ?>
 <?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
-<div class="updated fade"><p><strong><?php _e( 'Options Saved', 'mobilefirst' ); ?></strong></p></div>
+<div class="updated fade"><p><strong><?php _e( 'Options Saved', 'mobile-first' ); ?></strong></p></div>
 <?php endif; ?>
-<p><?php printf( __( 'Thank you for choosing Mobile First and WordPress as the solution for building your website. If you need help please consider %1$supgrading to Plus%2$s.', 'mobilefirst' ), '<a href="http://cyberchimps.com/plus/" target="_blank">', '</a>' ); ?></p>
-<p><?php printf( __( 'Manage previously uploaded images under the %1$sMedia%2$s tab.', 'mobilefirst' ), '<a href="' . admin_url() . 'upload.php" target="_blank">', '</a>' ); ?></p>
+<p><?php printf( __( 'Thank you for choosing Mobile First and WordPress as the solution for building your website. If you need help please consider %1$supgrading to Plus%2$s.', 'mobile-first' ), '<a href="http://cyberchimps.com/plus/" target="_blank">', '</a>' ); ?></p>
+<p><?php printf( __( 'Manage previously uploaded images under the %1$sMedia%2$s tab.', 'mobile-first' ), '<a href="' . admin_url() . 'upload.php" target="_blank">', '</a>' ); ?></p>
 <form method="post" action="options.php">
 <p class="submit">
-<input type="reset" value="<?php _e( 'Undo', 'mobilefirst' ); ?>" style="margin-left:10px;float:right" />
-<input type="button" value="<?php _e( 'Clear All Settings', 'mobilefirst' ); ?>" style="float:right" onclick="clearForm(this.form)" />
-<input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'mobilefirst' ); ?>" />
+<input type="reset" value="<?php _e( 'Undo', 'mobile-first' ); ?>" style="margin-left:10px;float:right" />
+<input type="button" value="<?php _e( 'Clear All Settings', 'mobile-first' ); ?>" style="float:right" onclick="clearForm(this.form)" />
+<input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'mobile-first' ); ?>" />
 </p>
-<p style="text-align:right"><?php printf( __( 'After clicking either %1$s Clear All Settings %2$s or %1$s Undo %2$s you must then click %1$s Save Options %2$s to confirm.', 'mobilefirst' ), '<em>', '</em>' ); ?><br /><?php printf( __( '%1$s Undo %2$s only restores your settings to the previous saved state before saving again after clearing all settings.', 'mobilefirst' ), '<em>', '</em>' ); ?></p>
+<p style="text-align:right"><?php printf( __( 'After clicking either %1$s Clear All Settings %2$s or %1$s Undo %2$s you must then click %1$s Save Options %2$s to confirm.', 'mobile-first' ), '<em>', '</em>' ); ?><br /><?php printf( __( '%1$s Undo %2$s only restores your settings to the previous saved state before saving again after clearing all settings.', 'mobile-first' ), '<em>', '</em>' ); ?></p>
 <?php settings_fields( 'mobilefirst_options' ); ?>
 <table class="form-table">
 <?php
 ?>
-<tr valign="top"><th scope="row"><?php _e( 'Turn On/Off Features', 'mobilefirst' ); ?><br /><em>(<?php _e( 'check to turn on', 'mobilefirst' ); ?>)</em></th>
+<tr valign="top"><th scope="row"><?php _e( 'Turn On/Off Features', 'mobile-first' ); ?><br /><em>(<?php _e( 'check to turn on', 'mobile-first' ); ?>)</em></th>
 <td>
 <input id="mobilefirst_options[social]" name="mobilefirst_options[social]" type="checkbox" value="1" <?php checked( '1', $options['social'] ); ?> />
-<label class="description" for="mobilefirst_options[social]"><?php _e( 'Social Profile Icons', 'mobilefirst' ); ?> <em>(<?php _e( 'set further settings below in social profile settings', 'mobilefirst' ); ?>)</em></label>
+<label class="description" for="mobilefirst_options[social]"><?php _e( 'Social Profile Icons', 'mobile-first' ); ?> <em>(<?php _e( 'set further settings below in social profile settings', 'mobile-first' ); ?>)</em></label>
 <br />
 <input id="mobilefirst_options[description]" name="mobilefirst_options[description]" type="checkbox" value="1" <?php checked( '1', $options['description'] ); ?> />
-<label class="description" for="mobilefirst_options[description]"><?php _e( 'Site Description', 'mobilefirst' ); ?> <em>(<?php _e( 'set under settings > general from the main wp admin', 'mobilefirst' ); ?>)</em></label>
+<label class="description" for="mobilefirst_options[description]"><?php _e( 'Site Description', 'mobile-first' ); ?> <em>(<?php _e( 'set under settings > general from the main wp admin', 'mobile-first' ); ?>)</em></label>
 <br />
 <input id="mobilefirst_options[search]" name="mobilefirst_options[search]" type="checkbox" value="1" <?php checked( '1', $options['search'] ); ?> />
-<label class="description" for="mobilefirst_options[search]"><?php _e( 'Menu Search Field', 'mobilefirst' ); ?> <em>(<?php _e( 'search box appears on right side of menu - allows users to search the contents of your site', 'mobilefirst' ); ?>)</em></label>
+<label class="description" for="mobilefirst_options[search]"><?php _e( 'Menu Search Field', 'mobile-first' ); ?> <em>(<?php _e( 'search box appears on right side of menu - allows users to search the contents of your site', 'mobile-first' ); ?>)</em></label>
 <br />
 <input id="mobilefirst_options[crumbs]" name="mobilefirst_options[crumbs]" type="checkbox" value="1" <?php checked( '1', $options['crumbs'] ); ?> />
-<label class="description" for="mobilefirst_options[crumbs]"><?php _e( 'Breadcrumbs', 'mobilefirst' ); ?> <em>(<?php _e( 'shows your visitors where they are in relation to the homepage', 'mobilefirst' ); ?>)</em></label>
+<label class="description" for="mobilefirst_options[crumbs]"><?php _e( 'Breadcrumbs', 'mobile-first' ); ?> <em>(<?php _e( 'shows your visitors where they are in relation to the homepage', 'mobile-first' ); ?>)</em></label>
 <br />
 <input id="mobilefirst_options[slider]" name="mobilefirst_options[slider]" type="checkbox" value="1" <?php checked( '1', $options['slider'] ); ?> />
-<label class="description" for="mobilefirst_options[slider]"><?php _e( 'Universal Slider', 'mobilefirst' ); ?> <em>(<?php printf(__( 'important: you must create a slider first after installing %1$sWP Nivo Slider%2$s - for best results set slider to and prepare images at 1000px wide [or whatever you have set your max display width to] and 200px high - all slides need to be consistent in size - set category to pull featured images from in plugin settings', 'mobilefirst' ), '<a href="plugin-install.php?tab=search&s=WP+Nivo+Slider" target="_blank">', '</a>' ); ?>)</em></label>
+<label class="description" for="mobilefirst_options[slider]"><?php _e( 'Universal Slider', 'mobile-first' ); ?> <em>(<?php printf(__( 'important: you must create a slider first after installing %1$sWP Nivo Slider%2$s - for best results set slider to and prepare images at 1000px wide [or whatever you have set your max display width to] and 200px high - all slides need to be consistent in size - set category to pull featured images from in plugin settings', 'mobile-first' ), '<a href="plugin-install.php?tab=search&s=WP+Nivo+Slider" target="_blank">', '</a>' ); ?>)</em></label>
 <br />
 <input id="mobilefirst_options[twitter]" name="mobilefirst_options[twitter]" type="checkbox" value="1" <?php checked( '1', $options['twitter'] ); ?> />
-<label class="description" for="mobilefirst_options[twitter]"><?php _e( 'Twitter Feed', 'mobilefirst' ); ?> <em>(<?php _e( 'set further settings below in social profile settings', 'mobilefirst' ); ?>)</em></label>
+<label class="description" for="mobilefirst_options[twitter]"><?php _e( 'Twitter Feed', 'mobile-first' ); ?> <em>(<?php _e( 'set further settings below in social profile settings', 'mobile-first' ); ?>)</em></label>
 <br />
 <input id="mobilefirst_options[share]" name="mobilefirst_options[share]" type="checkbox" value="1" <?php checked( '1', $options['share'] ); ?> />
-<label class="description" for="mobilefirst_options[share]"><?php _e( 'Single Post Sharing', 'mobilefirst' ); ?> <em>(<?php _e( 'sets like, tweet and +1 buttons on single posts view', 'mobilefirst' ); ?>)</em></label>
+<label class="description" for="mobilefirst_options[share]"><?php _e( 'Single Post Sharing', 'mobile-first' ); ?> <em>(<?php _e( 'sets like, tweet and +1 buttons on single posts view', 'mobile-first' ); ?>)</em></label>
 <br />
 <input id="mobilefirst_options[customstyles]" name="mobilefirst_options[customstyles]" type="checkbox" value="1" <?php checked( '1', $options['customstyles'] ); ?> />
-<label class="description" for="mobilefirst_options[customstyles]"><?php _e( 'Custom Styles', 'mobilefirst' ); ?> <em>(<?php _e( 'set further settings below', 'mobilefirst' ); ?>)</em></label>
+<label class="description" for="mobilefirst_options[customstyles]"><?php _e( 'Custom Styles', 'mobile-first' ); ?> <em>(<?php _e( 'set further settings below', 'mobile-first' ); ?>)</em></label>
 </td>
 </tr>
 <?php
 ?>
-<tr valign="top"><th scope="row"><?php _e( 'Image URLs', 'mobilefirst' ); ?><br /><em>(<?php _e( 'enter full image urls or click the "Select/Upload Image" button to select/upload an image from the Media Manager and then click "Insert into Post"', 'mobilefirst' ); ?>)</em></th>
+<tr valign="top"><th scope="row"><?php _e( 'Image URLs', 'mobile-first' ); ?><br /><em>(<?php _e( 'enter full image urls or click the "Select/Upload Image" button to select/upload an image from the Media Manager and then click "Insert into Post"', 'mobile-first' ); ?>)</em></th>
 <td>
 <p class="mobilefirst-options-logo">
-<label class="description" for="mobilefirst_options[logo]"><?php _e( 'Logo Image URL', 'mobilefirst' ); ?></label><br />
+<label class="description" for="mobilefirst_options[logo]"><?php _e( 'Logo Image URL', 'mobile-first' ); ?></label><br />
 <input id="mobilefirst_options[logo]" class="logo-upload-url" type="text" name="mobilefirst_options[logo]" value="<?php echo esc_attr( $options['logo'] ); ?>" />
 <input id="mobilefirst_options_logo_button" type="button" value="Select/Upload Image" />
 </p>
@@ -113,86 +113,86 @@ $_REQUEST['settings-updated'] = false;
 </tr>
 <?php
 ?>
-<tr valign="top"><th scope="row"><?php _e( 'Social Profile Settings', 'mobilefirst' ); ?><br /><em>(<?php _e( 'enter full urls', 'mobilefirst' ); ?>)</em></th>
+<tr valign="top"><th scope="row"><?php _e( 'Social Profile Settings', 'mobile-first' ); ?><br /><em>(<?php _e( 'enter full urls', 'mobile-first' ); ?>)</em></th>
 <td>
 <input id="mobilefirst_options[facebookurl]" class="regular-text" type="text" name="mobilefirst_options[facebookurl]" value="<?php echo esc_attr( $options['facebookurl'] ); ?>" />
-<label class="description" for="mobilefirst_options[facebookurl]"><?php _e( 'Facebook Profile URL', 'mobilefirst' ); ?> <em>(<?php printf( __( 'example: %s', 'mobilefirst' ), '<strong>https://www.facebook.com/yourusername</strong>' ); ?>)</em></label>
+<label class="description" for="mobilefirst_options[facebookurl]"><?php _e( 'Facebook Profile URL', 'mobile-first' ); ?> <em>(<?php printf( __( 'example: %s', 'mobile-first' ), '<strong>https://www.facebook.com/yourusername</strong>' ); ?>)</em></label>
 <br />
 <input id="mobilefirst_options[twitterurl]" class="regular-text" type="text" name="mobilefirst_options[twitterurl]" value="<?php echo esc_attr( $options['twitterurl'] ); ?>" />
-<label class="description" for="mobilefirst_options[twitterurl]"><?php _e( 'Twitter Profile URL', 'mobilefirst' ); ?> <em>(<?php printf( __( 'example: %s', 'mobilefirst' ), '<strong>https://twitter.com/yourusername</strong>' ); ?>)</em></label>
+<label class="description" for="mobilefirst_options[twitterurl]"><?php _e( 'Twitter Profile URL', 'mobile-first' ); ?> <em>(<?php printf( __( 'example: %s', 'mobile-first' ), '<strong>https://twitter.com/yourusername</strong>' ); ?>)</em></label>
 <br />
 <input id="mobilefirst_options[linkedinurl]" class="regular-text" type="text" name="mobilefirst_options[linkedinurl]" value="<?php echo esc_attr( $options['linkedinurl'] ); ?>" />
-<label class="description" for="mobilefirst_options[linkedinurl]"><?php _e( 'LinkedIn Profile URL', 'mobilefirst' ); ?> <em>(<?php printf( __( 'example: %s', 'mobilefirst' ), '<strong>https://www.linkedin.com/in/yourusername</strong>' ); ?>)</em></label>
+<label class="description" for="mobilefirst_options[linkedinurl]"><?php _e( 'LinkedIn Profile URL', 'mobile-first' ); ?> <em>(<?php printf( __( 'example: %s', 'mobile-first' ), '<strong>https://www.linkedin.com/in/yourusername</strong>' ); ?>)</em></label>
 <br />
 <input id="mobilefirst_options[googleurl]" class="regular-text" type="text" name="mobilefirst_options[googleurl]" value="<?php echo esc_attr( $options['googleurl'] ); ?>" />
-<label class="description" for="mobilefirst_options[googleurl]"><?php _e( 'Google+ Profile URL', 'mobilefirst' ); ?> <em>(<?php printf( __( 'example: %s', 'mobilefirst' ), '<strong>https://plus.google.com/yourusernumber</strong>' ); ?>)</em></label>
+<label class="description" for="mobilefirst_options[googleurl]"><?php _e( 'Google+ Profile URL', 'mobile-first' ); ?> <em>(<?php printf( __( 'example: %s', 'mobile-first' ), '<strong>https://plus.google.com/yourusernumber</strong>' ); ?>)</em></label>
 <br />
 <input id="mobilefirst_options[twitname]" class="regular-text" type="text" name="mobilefirst_options[twitname]" value="<?php echo esc_attr( $options['twitname'] ); ?>" />
-<label class="description" for="mobilefirst_options[twitname]"><?php _e( 'Twitter Profile Username', 'mobilefirst' ); ?> <em>(<?php _e( 'username only - no @ needed', 'mobilefirst' ); ?>)</em></label>
+<label class="description" for="mobilefirst_options[twitname]"><?php _e( 'Twitter Profile Username', 'mobile-first' ); ?> <em>(<?php _e( 'username only - no @ needed', 'mobile-first' ); ?>)</em></label>
 </td>
 </tr>
 <?php
 ?>
-<tr valign="top"><th scope="row"><?php _e( 'Google Fonts', 'mobilefirst' ); ?><br /><em>(<?php printf( __( 'enter one google font from a %1$sselection of over six hundred%2$s, use proper capitalization and %3$s for spaces, example: %4$s.', 'mobilefirst' ), '<a href="https://www.google.com/fonts/" target="_blank">', '</a>', '<strong>+</strong>', '<strong>Open+Sans</strong>' ); printf( __( 'Then add the font name in the "Headers Font" field below or with CSS in a child theme stylesheet, example: %s', 'mobilefirst' ), '<code>h1, h2, h3, h4, h5, h6{font-family:&#39;Open Sans&#39;}</code>' ); ?>)</em></th>
+<tr valign="top"><th scope="row"><?php _e( 'Google Fonts', 'mobile-first' ); ?><br /><em>(<?php printf( __( 'enter one google font from a %1$sselection of over six hundred%2$s, use proper capitalization and %3$s for spaces, example: %4$s.', 'mobile-first' ), '<a href="https://www.google.com/fonts/" target="_blank">', '</a>', '<strong>+</strong>', '<strong>Open+Sans</strong>' ); printf( __( 'Then add the font name in the "Headers Font" field below or with CSS in a child theme stylesheet, example: %s', 'mobile-first' ), '<code>h1, h2, h3, h4, h5, h6{font-family:&#39;Open Sans&#39;}</code>' ); ?>)</em></th>
 <td>
 <input id="mobilefirst_options[gfont1]" class="regular-text" type="text" name="mobilefirst_options[gfont1]" value="<?php echo esc_attr( $options['gfont1'] ); ?>" />
-<label class="description" for="mobilefirst_options[gfont1]"><?php _e( 'Google Font One', 'mobilefirst' ); ?></label>
+<label class="description" for="mobilefirst_options[gfont1]"><?php _e( 'Google Font One', 'mobile-first' ); ?></label>
 </td>
 </tr>
 <?php
 ?>
-<tr valign="top"><th scope="row"><?php _e( 'Custom Styles', 'mobilefirst' ); ?><br /><em>(<?php printf( __( 'no %1$s for colors or %2$s or %3$s for sizes', 'mobilefirst' ), '<strong>#</strong>', '<strong>px</strong>', '<strong>%</strong>' ); ?>)</em></th>
+<tr valign="top"><th scope="row"><?php _e( 'Custom Styles', 'mobile-first' ); ?><br /><em>(<?php printf( __( 'no %1$s for colors or %2$s or %3$s for sizes', 'mobile-first' ), '<strong>#</strong>', '<strong>px</strong>', '<strong>%</strong>' ); ?>)</em></th>
 <td>
 <input id="mobilefirst_options[navbg]" class="regular-text color {required:false}" type="text" name="mobilefirst_options[navbg]" value="<?php echo esc_attr( $options['navbg'] ); ?>" />
-<label class="description" for="mobilefirst_options[navbg]"><?php _e( 'Navigation Menu Background Color', 'mobilefirst' ); ?></label>
+<label class="description" for="mobilefirst_options[navbg]"><?php _e( 'Navigation Menu Background Color', 'mobile-first' ); ?></label>
 <br />
 <input id="mobilefirst_options[navtrans]" class="regular-text" type="text" name="mobilefirst_options[navtrans]" value="<?php echo esc_attr( $options['navtrans'] ); ?>" />
-<label class="description" for="mobilefirst_options[navtrans]"><?php _e( 'Navigation Menu Dropdown Opacity Level', 'mobilefirst' ); ?> <em>(<?php printf( __( 'default is %1$s - %2$s is fully transparent and %3$s is fully solid', 'mobilefirst' ), '<strong>0.95</strong>', '<strong>0</strong>', '<strong>1</strong>' ); ?>)</em></label>
+<label class="description" for="mobilefirst_options[navtrans]"><?php _e( 'Navigation Menu Dropdown Opacity Level', 'mobile-first' ); ?> <em>(<?php printf( __( 'default is %1$s - %2$s is fully transparent and %3$s is fully solid', 'mobile-first' ), '<strong>0.95</strong>', '<strong>0</strong>', '<strong>1</strong>' ); ?>)</em></label>
 <br />
 <input id="mobilefirst_options[textcolor]" class="regular-text color {required:false}" type="text" name="mobilefirst_options[textcolor]" value="<?php echo esc_attr( $options['textcolor'] ); ?>" />
-<label class="description" for="mobilefirst_options[textcolor]"><?php _e( 'Body Text Color', 'mobilefirst' ); ?></label>
+<label class="description" for="mobilefirst_options[textcolor]"><?php _e( 'Body Text Color', 'mobile-first' ); ?></label>
 <br />
 <input id="mobilefirst_options[linkcolor]" class="regular-text color {required:false}" type="text" name="mobilefirst_options[linkcolor]" value="<?php echo esc_attr( $options['linkcolor'] ); ?>" />
-<label class="description" for="mobilefirst_options[linkcolor]"><?php _e( 'Link Color', 'mobilefirst' ); ?> <em>(<?php printf( __( 'will not universally change %1$s all %2$s link colors - use custom css for in-depth style management', 'mobilefirst' ), '<strong>', '</strong>' ); ?>)</em></label>
+<label class="description" for="mobilefirst_options[linkcolor]"><?php _e( 'Link Color', 'mobile-first' ); ?> <em>(<?php printf( __( 'will not universally change %1$s all %2$s link colors - use custom css for in-depth style management', 'mobile-first' ), '<strong>', '</strong>' ); ?>)</em></label>
 <br />
 <input id="mobilefirst_options[hovercolor]" class="regular-text color {required:false}" type="text" name="mobilefirst_options[hovercolor]" value="<?php echo esc_attr( $options['hovercolor'] ); ?>" />
-<label class="description" for="mobilefirst_options[hovercolor]"><?php _e( 'Link Hover Color', 'mobilefirst' ); ?></label>
+<label class="description" for="mobilefirst_options[hovercolor]"><?php _e( 'Link Hover Color', 'mobile-first' ); ?></label>
 <br />
 <input id="mobilefirst_options[pfont]" class="regular-text" type="text" name="mobilefirst_options[pfont]" value="<?php echo esc_attr( $options['pfont'] ); ?>" />
-<label class="description" for="mobilefirst_options[pfont]"><?php _e( 'Page/Post Paragraph Font', 'mobilefirst' ); ?></label>
+<label class="description" for="mobilefirst_options[pfont]"><?php _e( 'Page/Post Paragraph Font', 'mobile-first' ); ?></label>
 <br />
 <input id="mobilefirst_options[psize]" class="regular-text" type="text" name="mobilefirst_options[psize]" value="<?php echo esc_attr( $options['psize'] ); ?>" />
 <label class="description" for="mobilefirst_options[psize]"><?php _e( 'Page/Post Paragraph Font Size', 'mobilefirst' ); ?></label>
 <br />
 <input id="mobilefirst_options[pcolor]" class="regular-text color {required:false}" type="text" name="mobilefirst_options[pcolor]" value="<?php echo esc_attr( $options['pcolor'] ); ?>" />
-<label class="description" for="mobilefirst_options[pcolor]"><?php _e( 'Page/Post Paragraph Font Color', 'mobilefirst' ); ?></label>
+<label class="description" for="mobilefirst_options[pcolor]"><?php _e( 'Page/Post Paragraph Font Color', 'mobile-first' ); ?></label>
 <br />
 <input id="mobilefirst_options[plfont]" class="regular-text" type="text" name="mobilefirst_options[plfont]" value="<?php echo esc_attr( $options['plfont'] ); ?>" />
-<label class="description" for="mobilefirst_options[plfont]"><?php _e( 'Page/Post Paragraph Link Font', 'mobilefirst' ); ?></label>
+<label class="description" for="mobilefirst_options[plfont]"><?php _e( 'Page/Post Paragraph Link Font', 'mobile-first' ); ?></label>
 <br />
 <input id="mobilefirst_options[plsize]" class="regular-text" type="text" name="mobilefirst_options[plsize]" value="<?php echo esc_attr( $options['plsize'] ); ?>" />
-<label class="description" for="mobilefirst_options[plsize]"><?php _e( 'Page/Post Paragraph Link Font Size', 'mobilefirst' ); ?></label>
+<label class="description" for="mobilefirst_options[plsize]"><?php _e( 'Page/Post Paragraph Link Font Size', 'mobile-first' ); ?></label>
 <br />
 <input id="mobilefirst_options[plcolor]" class="regular-text color {required:false}" type="text" name="mobilefirst_options[plcolor]" value="<?php echo esc_attr( $options['plcolor'] ); ?>" />
-<label class="description" for="mobilefirst_options[plcolor]"><?php _e( 'Page/Post Paragraph Link Font Color', 'mobilefirst' ); ?></label>
+<label class="description" for="mobilefirst_options[plcolor]"><?php _e( 'Page/Post Paragraph Link Font Color', 'mobile-first' ); ?></label>
 <br />
 <input id="mobilefirst_options[hfont]" class="regular-text" type="text" name="mobilefirst_options[hfont]" value="<?php echo esc_attr( $options['hfont'] ); ?>" />
-<label class="description" for="mobilefirst_options[hfont]"><?php _e( 'Headers Font', 'mobilefirst' ); ?></label>
+<label class="description" for="mobilefirst_options[hfont]"><?php _e( 'Headers Font', 'mobile-first' ); ?></label>
 <br />
 <input id="mobilefirst_options[hcolor]" class="regular-text color {required:false}" type="text" name="mobilefirst_options[hcolor]" value="<?php echo esc_attr( $options['hcolor'] ); ?>" />
-<label class="description" for="mobilefirst_options[hcolor]"><?php _e( 'Headers Color', 'mobilefirst' ); ?></label>
+<label class="description" for="mobilefirst_options[hcolor]"><?php _e( 'Headers Color', 'mobile-first' ); ?></label>
 <br />
 <input id="mobilefirst_options[hlcolor]" class="regular-text color {required:false}" type="text" name="mobilefirst_options[hlcolor]" value="<?php echo esc_attr( $options['hlcolor'] ); ?>" />
-<label class="description" for="mobilefirst_options[hlcolor]"><?php _e( 'Headers Link Color', 'mobilefirst' ); ?></label>
+<label class="description" for="mobilefirst_options[hlcolor]"><?php _e( 'Headers Link Color', 'mobile-first' ); ?></label>
 </td>
 </tr>
 </table>
 <p class="submit">
-<input type="reset" value="<?php _e( 'Undo', 'mobilefirst' ); ?>" style="margin-left:10px;float:right" />
-<input type="button" value="<?php _e( 'Clear All Settings', 'mobilefirst' ); ?>" style="float:right" onclick="clearForm(this.form)" />
-<input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'mobilefirst' ); ?>" />
+<input type="reset" value="<?php _e( 'Undo', 'mobile-first' ); ?>" style="margin-left:10px;float:right" />
+<input type="button" value="<?php _e( 'Clear All Settings', 'mobile-first' ); ?>" style="float:right" onclick="clearForm(this.form)" />
+<input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'mobile-first' ); ?>" />
 </p>
-<p style="text-align:right"><?php printf( __( 'After clicking either %1$s Clear All Settings %2$s or %1$sUndo%2$s you must then click %1$s Save Options %2$s to confirm.', 'mobilefirst' ), '<em>', '</em>' ); ?><br /><?php printf( __( '%1$s Undo %2$s only restores your settings to the previous saved state before saving again after clearing all settings.', 'mobilefirst' ), '<em>', '</em>' ); ?></p>
+<p style="text-align:right"><?php printf( __( 'After clicking either %1$s Clear All Settings %2$s or %1$sUndo%2$s you must then click %1$s Save Options %2$s to confirm.', 'mobile-first' ), '<em>', '</em>' ); ?><br /><?php printf( __( '%1$s Undo %2$s only restores your settings to the previous saved state before saving again after clearing all settings.', 'mobile-first' ), '<em>', '</em>' ); ?></p>
 </form>
 </div>
 <?php

@@ -2,15 +2,16 @@
 add_action( 'after_setup_theme', 'mobilefirst_setup' );
 function mobilefirst_setup()
 {
-load_theme_textdomain( 'mobilefirst', get_template_directory() . '/languages' );
+load_theme_textdomain( 'mobile-first', get_template_directory() . '/languages' );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'custom-background' );
 global $content_width;
 if ( ! isset( $content_width ) ) $content_width = 640;
 register_nav_menus(
-array( 'main-menu' => __( 'Main Menu', 'mobilefirst' ) )
+array( 'main-menu' => __( 'Main Menu', 'mobile-first' ) )
 );
+add_theme_support( 'title-tag' );
 }
 require_once ( get_template_directory() . '/setup/options.php' );
 add_action( 'wp_enqueue_scripts', 'mobilefirst_load_scripts' );
@@ -111,7 +112,7 @@ return $title . esc_attr( get_bloginfo( 'name' ) );
 function mobilefirst_breadcrumbs()
 {
 if ( !is_home() ) {
-echo '<div id="breadcrumbs"><a href="' . home_url() . '/">' . __( 'Home', 'mobilefirst' ) . '</a> &rarr; ';
+echo '<div id="breadcrumbs"><a href="' . home_url() . '/">' . __( 'Home', 'mobile-first' ) . '</a> &rarr; ';
 if ( is_category() || is_single() ) {
 the_category( ', ' );
 if ( is_single() ) {
@@ -120,14 +121,14 @@ the_title();
 }
 } 
 elseif ( is_page() ) { the_title(); }
-elseif ( is_tag() ) { _e( 'Tag Page for ', 'mobilefirst' ); single_tag_title(); }
-elseif ( is_day() ) { _e( 'Archives for ', 'mobilefirst' ); the_time( 'F jS, Y' ); }
-elseif ( is_month() ) { _e( 'Archives for ', 'mobilefirst' ); the_time( 'F, Y' ); }
-elseif ( is_year() ) { _e( 'Archives for ', 'mobilefirst' ); the_time( 'Y' ); }
-elseif ( is_author() ) { _e( 'Author Archives', 'mobilefirst' ); }
-elseif ( isset( $_GET['paged'] ) && !empty( $_GET['paged'] ) ) { _e( 'Blog Archives', 'mobilefirst' ); }
-elseif ( is_search() ) { _e( 'Search Results', 'mobilefirst' ); }
-elseif ( is_404() ) { _e( 'Page Not Found', 'mobilefirst' ); }
+elseif ( is_tag() ) { _e( 'Tag Page for ', 'mobile-first' ); single_tag_title(); }
+elseif ( is_day() ) { _e( 'Archives for ', 'mobile-first' ); the_time( 'F jS, Y' ); }
+elseif ( is_month() ) { _e( 'Archives for ', 'mobile-first' ); the_time( 'F, Y' ); }
+elseif ( is_year() ) { _e( 'Archives for ', 'mobile-first' ); the_time( 'Y' ); }
+elseif ( is_author() ) { _e( 'Author Archives', 'mobile-first' ); }
+elseif ( isset( $_GET['paged'] ) && !empty( $_GET['paged'] ) ) { _e( 'Blog Archives', 'mobile-first' ); }
+elseif ( is_search() ) { _e( 'Search Results', 'mobile-first' ); }
+elseif ( is_404() ) { _e( 'Page Not Found', 'mobile-first' ); }
 echo '</div>';
 }
 }
@@ -140,7 +141,7 @@ add_action( 'widgets_init', 'mobilefirst_widgets_init' );
 function mobilefirst_widgets_init()
 {
 register_sidebar( array (
-'name' => __( 'Sidebar Widget Area', 'mobilefirst' ),
+'name' => __( 'Sidebar Widget Area', 'mobile-first' ),
 'id' => 'primary-widget-area',
 'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 'after_widget' => "</li>",
@@ -148,7 +149,7 @@ register_sidebar( array (
 'after_title' => '</h3>',
 ) );
 register_sidebar( array (
-'name' => __( 'Left Sidebar Widget Area', 'mobilefirst' ),
+'name' => __( 'Left Sidebar Widget Area', 'mobile-first' ),
 'id' => 'lsidebar-widget-area',
 'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 'after_widget' => "</li>",
@@ -156,7 +157,7 @@ register_sidebar( array (
 'after_title' => '</h3>',
 ) );
 register_sidebar( array (
-'name' => __( 'Right Sidebar Widget Area', 'mobilefirst' ),
+'name' => __( 'Right Sidebar Widget Area', 'mobile-first' ),
 'id' => 'rsidebar-widget-area',
 'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 'after_widget' => "</li>",

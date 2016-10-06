@@ -27,7 +27,7 @@ jscolor.preload();
 getDir : function() {
 if(!jscolor.dir) {
 var detected = jscolor.detectDir();
-jscolor.dir = detected!==false ? detected : '../wp-content/themes/mobilefirst/scripts/color-picker/';
+jscolor.dir = detected!==false ? detected : '../wp-content/themes/mobile-first/scripts/color-picker/';
 }
 return jscolor.dir;
 },
