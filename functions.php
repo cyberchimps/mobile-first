@@ -183,3 +183,13 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
+add_action( 'admin_notices', 'my_admin_notice' );
+function my_admin_notice(){
+	global $mobile_first_check_screen;
+	$mobile_first_check_screen = get_admin_page_title();
+ 
+   if ( $mobile_first_check_screen == 'Mobile First Options' )
+{
+          echo '<div class="notice notice-info is-dismissible"><p class="mobile-first-upgrade-callout" style="font-size:18px; "><a href="https://cyberchimps.com/free-download-50-stock-images-use-please/?utm_source=Mobile-First" target="_blank" style="text-decoration:none;">FREE - Download CyberChimps\' Pack of 50 High-Resolution Stock Images Now</a></p></div>';
+}
+}
