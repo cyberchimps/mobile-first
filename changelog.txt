@@ -1,6 +1,9 @@
 Mobile-First Free Changelog
 
 ****************************
+Version 1.1 (04-21-17)
+- Fixed issue with PHP version 7.1
+
 Version 1.0 (10-06-16)
 - Fixed display issue of search text.
 - Modified text domain.
