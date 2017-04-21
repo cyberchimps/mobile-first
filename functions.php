@@ -183,8 +183,8 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
-add_action( 'admin_notices', 'my_admin_notice' );
-function my_admin_notice(){
+add_action( 'admin_notices', 'mobile_first_admin_notice' );
+function mobile_first_admin_notice(){
 	global $mobile_first_check_screen;
 	$mobile_first_check_screen = get_admin_page_title();
  
