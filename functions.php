@@ -193,3 +193,32 @@ function mobile_first_admin_notice(){
           echo '<div class="notice notice-info is-dismissible"><p class="mobile-first-upgrade-callout" style="font-size:18px; "><a href="https://cyberchimps.com/free-download-50-stock-images-use-please/?utm_source=Mobile-First" target="_blank" style="text-decoration:none;">FREE - Download CyberChimps\' Pack of 50 High-Resolution Stock Images Now</a></p></div>';
 }
 }
+
+
+function mobile_first_customize_edit_links( $wp_customize ) {
+
+   $wp_customize->selective_refresh->add_partial( 'blogname', array(
+'selector' => '#site-title a'
+) );
+
+}
+
+add_action( 'customize_register', 'mobile-first_customize_edit_links' );
+add_theme_support( 'customize-selective-refresh-widgets' );
+
+
+add_action( 'admin_notices', 'my_admin_notice' );
+function my_admin_notice(){
+
+	$admin_check_screen = get_admin_page_title();
+
+	if ( $admin_check_screen == 'Mobile First Options' )
+	{
+	?>
+		<div class="notice notice-success is-dismissible">
+				<b><p>Liked this theme? <a href="https://wordpress.org/support/theme/mobile-first/reviews/#new-post" target="_blank">Leave us</a> a ***** rating. Thank you! </p></b>
+		</div>
+		<?php
+	}
+
+}
