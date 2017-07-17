@@ -203,7 +203,7 @@ function mobile_first_customize_edit_links( $wp_customize ) {
 
 }
 
-add_action( 'customize_register', 'mobile-first_customize_edit_links' );
+add_action( 'customize_register', 'mobile_first_customize_edit_links' );
 add_theme_support( 'customize-selective-refresh-widgets' );
 
 
