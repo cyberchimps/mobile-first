@@ -132,11 +132,7 @@ elseif ( is_404() ) { _e( 'Page Not Found', 'mobile-first' ); }
 echo '</div>';
 }
 }
-add_action( 'init', 'mobilefirst_add_shortcodes' );
-function mobilefirst_add_shortcodes()
-{
-add_filter( 'widget_text', 'do_shortcode' );
-}
+
 add_action( 'widgets_init', 'mobilefirst_widgets_init' );
 function mobilefirst_widgets_init()
 {
