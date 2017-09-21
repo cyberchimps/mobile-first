@@ -1,6 +1,9 @@
 Mobile-First Free Changelog
 
 ****************************
+Version 1.2 ( 09-22-17 )
+- Added visible edit link for the site description ( Tagline )
+
 Version 1.1 (07-18-17)
 - Updated as per latest WP standards
 - Added visible edit links in the customizer preview
