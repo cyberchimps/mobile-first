@@ -197,6 +197,10 @@ function mobile_first_customize_edit_links( $wp_customize ) {
 'selector' => '#site-title a'
 ) );
 
+   $wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+'selector' => '#site-description'
+) );
+
 }
 
 add_action( 'customize_register', 'mobile_first_customize_edit_links' );
@@ -215,6 +219,90 @@ function my_admin_notice(){
 				<b><p>Liked this theme? <a href="https://wordpress.org/support/theme/mobile-first/reviews/#new-post" target="_blank">Leave us</a> a ***** rating. Thank you! </p></b>
 		</div>
 		<?php
+	}
+
+
+	if( !class_exists('SlideDeckPlugin') )
+	{
+	$plugin='slidedeck/slidedeck.php';
+	$slug = 'slidedeck';
+	$installed_plugins = get_plugins();
+
+	 if ( $admin_check_screen == 'Manage Themes' || $admin_check_screen == 'Mobile First Options' )
+	{
+		?>
+		<div class="notice notice-info is-dismissible" style="margin-top:15px;">
+		<p>
+			<?php if( isset( $installed_plugins[$plugin] ) )
+			{
+			?>
+				 <a href="<?php echo admin_url( 'plugins.php' ); ?>">Activate the SlideDeck plugin</a>
+			 <?php
+			}
+			else
+			{
+			 ?>
+			 <a href="<?php echo wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug ); ?>">Install the SlideDeck plugin</a>
+			 <?php } ?>
+
+		</p>
+		</div>
+		<?php
+	}
+	}
+
+	if( !class_exists('WPForms') )
+	{
+	$plugin = 'wpforms-lite/wpforms.php';
+	$slug = 'wpforms-lite';
+	$installed_plugins = get_plugins();
+	 if ( $admin_check_screen == 'Manage Themes' || $admin_check_screen == 'Mobile First Options' )
+	{
+		?>
+		<div class="notice notice-info is-dismissible" style="margin-top:15px;">
+		<p>
+			<?php if( isset( $installed_plugins[$plugin] ) )
+			{
+			?>
+				 <a href="<?php echo admin_url( 'plugins.php' ); ?>">Activate the WPForms Lite plugin</a>
+			 <?php
+			}
+			else
+			{
+			 ?>
+	 		 <a href="<?php echo wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug ); ?>">Install the WP Forms Lite plugin</a>
+			 <?php } ?>
+		</p>
+		</div>
+		<?php
+	}
+	}
+	
+	if( !class_exists('WP_Legal_Pages') )
+	{
+	$plugin = 'wplegalpages/legal-pages.php';
+	$slug = 'wplegalpages';
+	$installed_plugins = get_plugins();
+	 if ( $admin_check_screen == 'Manage Themes' || $admin_check_screen == 'Mobile First Options' )
+	{
+		?>
+		<div class="notice notice-info is-dismissible" style="margin-top:15px;">
+		<p>
+			<?php if( isset( $installed_plugins[$plugin] ) )
+			{
+			?>
+				 <a href="<?php echo admin_url( 'plugins.php' ); ?>">Activate the WP Legal Pages plugin</a>
+			 <?php
+			}
+			else
+			{
+			 ?>
+	 		 <a href="<?php echo wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug ); ?>">Install the WP Legal Pages plugin</a>
+			 <?php } ?>
+		</p>
+		</div>
+		<?php
+	}
 	}
 
 }
