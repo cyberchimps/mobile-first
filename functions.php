@@ -236,13 +236,13 @@ function my_admin_notice(){
 			<?php if( isset( $installed_plugins[$plugin] ) )
 			{
 			?>
-				 <a href="<?php echo admin_url( 'plugins.php' ); ?>">Activate the SlideDeck Lite plugin</a>
+				 <a href="<?php echo admin_url( 'plugins.php' ); ?>">Activate the SlideDeck plugin</a>
 			 <?php
 			}
 			else
 			{
 			 ?>
-			 <a href="<?php echo wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug ); ?>">Install the SlideDeck Lite plugin</a>
+			 <a href="<?php echo wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug ); ?>">Install the SlideDeck plugin</a>
 			 <?php } ?>
 
 		</p>
