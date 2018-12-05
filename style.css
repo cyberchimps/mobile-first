@@ -3,8 +3,8 @@ Theme Name: Mobile First
 Theme URI: https://cyberchimps.com/mobile-first/
 Author: CyberChimps
 Author URI: https://cyberchimps.com/
-Description: Use of the internet is evolving rapidly, and its accessibility from anywhere, at any time, on-the-go, with pervasive devices is the need of the hour. Mobile First is a theme designed keeping in mind the responsive design. Be it any device laptop, desktop, smartphone, iPad, etc. the internet should always adapt to your device. Useful features like the Twitter feed, social icons, and single post sharing makes it a power packed theme. Visible edit links in the customizer is a convenient feature newly introduced in this theme.
-Version: 1.2
+Description: Mobile First is a Gutenberg Compatible WordPress theme designed keeping in mind the responsive design. Be it any device - laptop, desktop, smartphone, iPad, etc. the theme will adapt to any device. It has useful features like the Twitter feed, social icons, and single post sharing that makes it a power-packed theme. Visible edit links in the customizer is a convenient feature that in this theme.
+Version: 1.3
 License: GNU General Public License
 License URI: https://www.gnu.org/licenses/gpl.html
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, rtl-language-support, blog
@@ -14,7 +14,7 @@ Mobile First WordPress Theme © 2014 CyberChimps
 Mobile First is distributed under the terms of the GNU GPL
 */
 
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font-size:100%;font:inherit;padding:0;border:0;margin:0;vertical-align:baseline}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font-size:100%;font:inherit;padding:0;border:0;margin:0;vertical-align:baseline;}body{line-height:1.5em}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
 th, td{padding:2px}big{font-size:125%}small, sup, sub{font-size:80%}sup{vertical-align:super}sub{vertical-align:sub}dd{margin-left:20px}kbd, tt{font-family:courier;font-size:80%}ins{text-decoration:underline}del, strike, s{text-decoration:line-through}
 
 body{font-family:arial,helvetica,sans-serif;color:#fff;background:#111}
@@ -36,7 +36,19 @@ h6{font-size:125%}
 strong, dt{font-weight:bold}
 em, address, cite, var{font-style:italic}
 code{font-family:'courier new',courier,serif;color:#25d0ef}
-pre{overflow-x:auto;white-space:pre-wrap}
+pre{
+    font-size: 0.85em;
+    line-height: 1.53;
+    padding: 9.5px;
+    margin: 0 0 0.6em;
+    background-color: #f5f5f5;
+    word-break: break-all;
+    word-wrap: break-word;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    white-space: pre-wrap;
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace !important;
+    color: #333333 !important;
+}
 hr{height:1px;border:none;margin:30px 0;background:#333}
 .entry-content ul, .entry-content ol, .comment-content ul, .comment-content ol{text-indent:-8px;margin-top:10px;margin-left:20px !important;margin-bottom:10px}
 .entry-content li:before, .comment-content li:before{content:"- "}
@@ -56,7 +68,7 @@ table{width:100%}
 
 #wrapper{}
 #header, #breadcrumbs, #twitter-feed{margin:0 4%;clear:both}
-#header{padding-bottom:30px;margin-top:100px}
+#header{padding-bottom:30px;margin-top:50px;margin-bottom:50px;}
 #branding{margin-bottom:30px;float:left}
 #logo{width:100%}
 #container{clear:both}
@@ -110,7 +122,7 @@ table{width:100%}
 .slider-wrapper #wpns_slider{width:100%;height:auto}
 .slider-wrapper, .nivoSlider img{max-width:100% !important;max-height:200px !important}
 
-#twitter-feed{box-sizing:border-box;padding:10px 20px;border:1px solid #444;margin-bottom:30px;background:#333}
+#twitter-feed{box-sizing:border-box;padding:10px 20px;border:1px solid #444;margin-top:50px;margin-bottom:30px;background:#333}
 #twitter-feed .twitter-timeline{width:100% !important}
 #twitter-feed .tweet *{color:#fff !important}
 
@@ -167,12 +179,12 @@ p.attachment img{display:block;margin:0 auto;clear:both}
 .sticky{}
 .sticky .entry-title{padding-top:20px;margin-top:0}
 .bypostauthor{background:#222}
-.wp-caption{margin:20px 0}
+.wp-caption{margin:20px 0;max-width: 100%;}
 .wp-caption-text{}
-.alignleft, .aligncenter, .alignright{text-align:center}
+.alignleft, .aligncenter, .alignright{text-align:center;}
 .gallery-caption{border:1px solid #eee}
-.alignleft{margin:15px 15px 15px 0;float:left}
-.alignright{margin:15px 0 15px 15px;float:right}
+.alignleft{margin:15px 15px 15px 0 !important;float:left}
+.alignright{margin:15px 0 15px 15px !important;float:right}
 .aligncenter{display:block;margin:15px auto;clear:both}
 .size-thumbnail{margin:5px}
 #wp-calendar{width:100%}
@@ -185,7 +197,7 @@ p.attachment img{display:block;margin:0 auto;clear:both}
 @media all and (max-width:1000px){#sidebar #s{width:92%;border-right:1px solid #eee}#sidebar #searchsubmit{display:none}}
 @media all and (max-width:768px){}
 @media all and (max-width:767px){#menu label.toggle{display:block}#menu ul{display:none}#menu input.toggle:checked + div > ul{display:block}#menu input.toggle:checked + div > ul li a{display:inline-block;box-sizing:border-box;width:100%;border-right:none}#menu .sub-menu, #menu .children{position:absolute;width:150px;left:100%;margin-top:0;margin-left:-150px !important}#menu ul li:hover ul ul, #menu ul ul li:hover ul ul{top:26px;margin:0 !important}#menu .sub-menu a, #menu .children a{width:150px !important}}
-@media all and (max-width:480px){#content, #sidebar, #lsidebar-sidebar, #rsidebar-sidebar{width:92%;padding:4% !important;margin:0 !important}}
+@media all and (max-width:768px){#content, #sidebar, #lsidebar-sidebar, #rsidebar-sidebar{width:92%;padding:4% !important;margin:0 !important}}
 @media all and (max-width:320px){#header, #menu #s, #content, #sidebar, #footer{width:100%;max-width:310px;text-align:left;margin-left:auto;margin-right:auto}}
 
 .screen-reader-text{clip:rect(1px, 1px, 1px, 1px);position:absolute !important}
@@ -197,4 +209,77 @@ p.attachment img{display:block;margin:0 auto;clear:both}
 #menu button
 {
 	margin-left:30px;
+}
+
+li.blocks-gallery-item:before {
+    content: "";
+}
+#wrapper .slidedeck-frame {
+	clear: both;
+}
+iframe{
+	max-width:100%;
+}
+
+.has-background.has-light-gray-background-color{
+	background-color: #f5f5f5;
+}
+.has-text-color.has-light-gray-color{
+	color: #f5f5f5;
+}
+
+.has-background.has-gray-background-color{
+	background-color: #777;
+}
+.has-text-color.has-gray-color{
+	color: #777;
+}
+
+.has-background.has-black-background-color{
+	background-color: #000000;
+}
+.has-text-color.has-black-color{
+	color: #000000;
+}
+
+.has-background.has-blue-background-color{
+	background-color: #0286cf;
+}
+.has-text-color.has-blue-color{
+	color: #0286cf;
+}
+
+.has-background.has-legacy-background-color{
+	background-color: #b6b6b6;
+}
+.has-text-color.has-legacy-color{
+	color: #b6b6b6;
+}
+
+.has-background.has-red-background-color{
+	background-color: #c80a00;
+}
+.has-text-color.has-red-color{
+	color: #c80a00;
+}
+
+.has-background.has-textdefault-background-color{
+	background-color: #444444;
+}
+.has-text-color.has-textdefault-color{
+	color: #444444;
+}
+
+.has-background.has-linkdefault-background-color{
+	background-color: #1eaedb;
+}
+.has-text-color.has-linkdefault-color{
+	color: #1eaedb;
+}
+
+.has-background.has-hoverdefault-background-color{
+	background-color: #000;
+}
+.has-text-color.has-hoverdefault-color{
+	color: #000;
 }
