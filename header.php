@@ -55,7 +55,7 @@ if ( !is_singular() ) { echo '</h1>'; }
 </section>
 </header>
 <?php if ( $options['crumbs'] ) { mobilefirst_breadcrumbs(); } ?>
-<?php if ( $options['slider'] ) { echo do_shortcode( esc_attr( $options['slider_shortcode'] ) ); }; ?>
+<?php if ( $options['slider'] ) { echo do_shortcode( $options['slider_shortcode'] ); }; ?>
 <?php if ( $options['twitter'] ) {
 echo '<div id="twitter-feed">';
 echo '<a class="twitter-timeline" data-theme="dark" data-link-color="#25d0ef" data-chrome="noheader nofooter noborders noscrollbar transparent" data-tweet-limit="1" data-show-replies="false" data-screen-name="' . sanitize_text_field( $options["twitname"] ) . '" href="https://twitter.com/' . sanitize_text_field( $options["twitname"] ) . '" data-widget-id="362696933116100610">Tweets by @' . sanitize_text_field( $options["twitname"] ) . '</a>';
