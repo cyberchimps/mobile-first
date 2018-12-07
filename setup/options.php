@@ -44,7 +44,7 @@ add_action( 'admin_menu', 'mobilefirst_options_add_page' );
 function mobilefirst_options_add_page()
 {
 global $mobilefirst_theme_page;
-$mobilefirst_theme_page = add_theme_page( __( 'Mobile First Options', 'mobilefirst' ), __( 'Mobile First Options', 'mobile-first' ), 'edit_theme_options', 'theme_options', 'mobilefirst_options_do_page' );
+$mobilefirst_theme_page = add_theme_page( __( 'Mobile First Options', 'mobile-first' ), __( 'Mobile First Options', 'mobile-first' ), 'edit_theme_options', 'theme_options', 'mobilefirst_options_do_page' );
 add_action( 'admin_print_scripts-' . $mobilefirst_theme_page, 'mobilefirst_enqueue_admin_scripts' );
 }
 function mobilefirst_options_do_page()
@@ -173,7 +173,7 @@ $_REQUEST['settings-updated'] = false;
 <label class="description" for="mobilefirst_options[pfont]"><?php _e( 'Page/Post Paragraph Font', 'mobile-first' ); ?></label>
 <br />
 <input id="mobilefirst_options[psize]" class="regular-text" type="text" name="mobilefirst_options[psize]" value="<?php echo esc_attr( $options['psize'] ); ?>" />
-<label class="description" for="mobilefirst_options[psize]"><?php _e( 'Page/Post Paragraph Font Size', 'mobilefirst' ); ?></label>
+<label class="description" for="mobilefirst_options[psize]"><?php _e( 'Page/Post Paragraph Font Size', 'mobile-first' ); ?></label>
 <br />
 <input id="mobilefirst_options[pcolor]" class="regular-text color {required:false}" type="text" name="mobilefirst_options[pcolor]" value="<?php echo esc_attr( $options['pcolor'] ); ?>" />
 <label class="description" for="mobilefirst_options[pcolor]"><?php _e( 'Page/Post Paragraph Font Color', 'mobile-first' ); ?></label>
